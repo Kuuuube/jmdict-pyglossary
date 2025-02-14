@@ -20,10 +20,7 @@ function refresh_source () {
 }
 
 function make_dict () {
-    input_name=$1
-    output_name=$2
-    read_format=$3
-    write_format=$4
+    local input_name=$1 output_name=$2 read_format=$3 write_format=$4
 
     mkdir tmp/${output_name}_${write_format}
     pyglossary data/${input_name} tmp/${output_name}_${write_format}/${output_name}_${write_format}.ifo --read-format=${read_format} --write-format=${write_format}
