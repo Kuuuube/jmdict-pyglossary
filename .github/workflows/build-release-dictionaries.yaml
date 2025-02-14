@@ -1,0 +1,35 @@
+name: Build and Release Dictionaries
+
+on:
+  schedule:
+    - cron: '0 5 * * *' # Runs at 5am UTC after the JMdict files are updated
+  workflow_dispatch: # Allows manually triggering the workflow
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get Current Date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Run Build Dicts Script
+        run: |
+          bash src/build_dicts.sh
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dst/*
+          tag_name: ${{ steps.date.outputs.date }}
+          name: ${{ steps.date.outputs.date }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            This is an automated release of the dictionaries for ${{ steps.date.outputs.date }}.
+            For information on how to use these dictionaries, please see the [README](https://github.com/MarvNC/jmdict-yomitan).
