@@ -19,12 +19,15 @@ function refresh_source () {
     fi
 }
 
-# $1, $2, $3, $4
-# input_name, output_name, read_format, write_format
 function make_dict () {
-    mkdir tmp/$1_stardict
-    pyglossary data/$1 tmp/$2_stardict/$2_stardict.ifo --read-format=$3 --write-format=$4
-    zip -jr dst/$2_stardict.zip tmp/$2_stardict
+    input_name=$1
+    output_name=$2
+    read_format=$3
+    write_format=$4
+
+    mkdir tmp/${output_name}_${write_format}
+    pyglossary data/${input_name} tmp/${output_name}_${write_format}/${output_name}_${write_format}.ifo --read-format=${read_format} --write-format=${write_format}
+    zip -jr dst/${output_name}_${write_format}.zip tmp/${output_name}_${write_format}
 }
 
 refresh_source "JMdict_e_examp"

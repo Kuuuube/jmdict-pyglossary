@@ -8,11 +8,11 @@ This repository is automatically updated daily and the dictionary files are buil
 
 ### Stardict
 
-- [JMdict English with Examples](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMdict_english_with_examples_stardict.zip)
+- [JMdict English with Examples](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMdict_english_with_examples_Stardict.zip)
 
-- [JMdict English](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMdict_english_stardict.zip)
+- [JMdict English](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMdict_english_Stardict.zip)
 
-- [JMnedict](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMnedict_stardict.zip)
+- [JMnedict](https://github.com/kuuuube/jmdict-pyglossary/releases/latest/download/JMnedict_Stardict.zip)
 
 ## Supported Formats
 
