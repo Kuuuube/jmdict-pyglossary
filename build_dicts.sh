@@ -12,7 +12,7 @@ function refresh_source () {
     NOW=$(date '+%s')
     YESTERDAY=$((NOW - 86400)) # 86,400 seconds in 24 hours
     if [ ! -f "data/$1" ]; then
-        wget "ftp.edrdg.org/pub/Nihongo/$1.gz"
+        wget -nc "ftp.edrdg.org/pub/Nihongo/$1.gz"
         gunzip -c "$1.gz" > "data/$1"
     elif [[ $YESTERDAY -gt $(date -r "data/$1" '+%s') ]]; then
         rsync "ftp.edrdg.org::nihongo/$1" "data/$1"
@@ -22,7 +22,7 @@ function refresh_source () {
 function make_dict () {
     local input_name=$1 output_name=$2 read_format=$3 write_format=$4
 
-    mkdir tmp/${output_name}_${write_format}
+    mkdir -p tmp/${output_name}_${write_format}
     pyglossary data/${input_name} tmp/${output_name}_${write_format}/${output_name}_${write_format} --read-format=${read_format} --write-format=${write_format}
     zip -jr dst/${output_name}_${write_format}.zip tmp/${output_name}_${write_format}
 }
