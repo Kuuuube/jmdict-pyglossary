@@ -6,7 +6,7 @@ mkdir -p tmp
 
 python -m venv .venv
 source .venv/bin/activate
-pip install pyglossary lxml python-idzip
+pip install pyglossary lxml python-idzip tqdm
 
 function refresh_source () {
     NOW=$(date '+%s')
