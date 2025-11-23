@@ -2,7 +2,7 @@
 
 This repository contains automatically generated dictionaries for use with PyGlossary supported formats. They are built using information from the [JMdict](https://www.edrdg.org/wiki/index.php/JMdict-EDICT_Dictionary_Project) project, which is a freely available Japanese dictionary maintained by the [Electronic Dictionary Research and Development Group](http://www.edrdg.org/). There are also releases for [JMnedict](https://www.edrdg.org/enamdict/enamdict_doc.html), which is a Japanese proper names dictionary.
 
-This repository is automatically updated daily and the dictionary files are built from JMdict using [PyGlossary](https://github.com/ilius/pyglossary).
+This repository is automatically updated weekly and the dictionary files are built from JMdict using [PyGlossary](https://github.com/ilius/pyglossary).
 
 ## Downloads
 
